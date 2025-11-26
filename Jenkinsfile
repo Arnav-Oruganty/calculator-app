@@ -22,14 +22,11 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh "pytest"
+                sh "python3 -m pytest"
             }
         }
 
         stage('Build Docker Image') {
-            when {
-                expression { currentBuild.result == null || currentBuild.result == 'SUCCESS' }
-            }
             steps {
                 sh "docker build -t ${DOCKERHUB_REPO}:latest ."
             }

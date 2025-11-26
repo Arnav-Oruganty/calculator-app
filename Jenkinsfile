@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git credentialsId: 'github-creds', url: 'https://github.com/YourUser/calculator-app.git'
+                git credentialsId: 'github-creds', url: 'https://github.com/Arnav-Oruganty/calculator-app.git'
             }
         }
 
